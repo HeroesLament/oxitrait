@@ -1,5 +1,5 @@
 # Re-implementation of https://doc.rust-lang.org/rust-by-example/trait.html
-from pytrait import Trait, Impl, Struct, abstractmethod
+from oxitrait import Trait, Impl, Struct, abstractmethod
 
 
 class Animal(metaclass=Trait):

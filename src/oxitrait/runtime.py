@@ -1,7 +1,7 @@
 from functools import wraps
 from typing import Callable
-from pytrait.enum import EnumVariant
-from pytrait.impl import Impl
+from oxitrait.enum import EnumVariant
+from oxitrait.impl import Impl
 
 def requires_traits(**trait_map):
     def decorator(fn: Callable):

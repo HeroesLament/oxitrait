@@ -8,7 +8,7 @@ from .impl import Impl
 
 class EnumVariant:
     """
-    Represents a single variant of a pytrait Enum.
+    Represents a single variant of an oxitrait Enum.
     Variants are created automatically by the Enum metaclass and exposed as attributes.
     """
 

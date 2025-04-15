@@ -1,8 +1,8 @@
 from abc import abstractmethod
-from pytrait.enum import Enum, auto
-from pytrait.impl import Impl
-from pytrait.trait import Trait
-from pytrait.runtime import requires_traits
+from oxitrait.enum import Enum, auto
+from oxitrait.impl import Impl
+from oxitrait.trait import Trait
+from oxitrait.runtime import requires_traits
 
 class Adjustable(metaclass=Trait):
     @abstractmethod

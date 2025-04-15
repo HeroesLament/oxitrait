@@ -1,12 +1,12 @@
-Find the package here: https://pypi.org/project/pytrait/
+Find the package here: https://pypi.org/project/OxiTrait/
 
-PyTrait
+OxiTrait
 =======
 
 Do you like Python, but think that multiple inheritance is a bit too flexible? Are you
 looking for a more constrained way to define interfaces and re-use code?
 
-Try using PyTraits!
+Try using OxiTraits!
 
 We provide three metaclasses that aid writing code for shared behavior separately from
 concrete types. For the most part, `Trait`s define interfaces, `Struct`s define state,
@@ -27,7 +27,7 @@ another type that it bestows implementation upon. This would be either a concret
 
 
 ```python
-from pytrait import Trait, abstractmethod    
+from oxitrait import Trait, abstractmethod    
 
 class MyTrait(metaclass=Trait):
     @abstractmethod
@@ -44,7 +44,7 @@ Structs, so whenever you see `metaclass=Struct`, the class is also a dataclass.
 Don't get confused with the existing Python module `struct` -- that one is lower-case.
 
 ```python
-from pytrait import Struct
+from oxitrait import Struct
 
 class MyStruct(metaclass=Struct):
     my_message: str = "this is a dataclass"
@@ -69,7 +69,7 @@ Or, you can use any name you want so long as you also provide a keyword argument
 `target="StructName"` alongside the `metaclass` argument.
 
 ```python
-from pytrait import Impl
+from oxitrait import Impl
 
 class MyImpl(MyTrait, metaclass=Impl, target="MyStruct"):
     ...
@@ -78,7 +78,7 @@ class MyImpl(MyTrait, metaclass=Impl, target="MyStruct"):
 or equivalently,
 
 ```python
-from pytrait import Impl
+from oxitrait import Impl
 
 class ImplMyTraitForMyStruct(MyTrait, metaclass=Impl):
     ...

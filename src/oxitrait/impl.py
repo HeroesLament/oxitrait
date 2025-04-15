@@ -1,7 +1,7 @@
 from abc import ABCMeta
 from typing import Any, Dict, Generator, List, Optional, Tuple
 
-from .errors import NamingConventionError, PytraitError
+from .errors import NamingConventionError, OxitraitError
 from .trait import Trait
 
 
@@ -36,7 +36,7 @@ class Impl(Trait):
         # provided, with the name of the target Struct or Trait.
         if len(bases) != 1:
             basenames = tuple(base.__name__ for base in bases)
-            raise pytrait.InheritanceError(
+            raise oxitraitit.InheritanceError(
                 f"Impl {name} must list exactly 1 Trait as a base class, got: "
                 f"{basenames}"
             )
@@ -77,7 +77,7 @@ class Impl(Trait):
 
     def require_naming_convention(cls, name: str, trait_name: str, target_name: str):
         # 1. Detect if it's the special Enum class or NOT a real impl class:
-        if name == "Enum" and cls.__module__ == "pytrait.enum":
+        if name == "Enum" and cls.__module__ == "oxitraitit.enum":
             # This is our special 'Enum' base class. Skip the naming rule.
             return
 
@@ -102,7 +102,7 @@ class Impl(Trait):
 
         if base_abstractmethods:
             abstractmethods = ", ".join(f"{m}()" for m in base_abstractmethods)
-            raise PytraitError(
+            raise OxitraitError(
                 f"Impl {name} must implement required methods: {abstractmethods}"
             )
 

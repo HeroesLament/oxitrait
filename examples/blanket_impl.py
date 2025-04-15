@@ -1,4 +1,4 @@
-from pytrait import Trait, Impl, Struct, abstractmethod
+from oxitrait import Trait, Impl, Struct, abstractmethod
 
 
 class Animal(metaclass=Trait):

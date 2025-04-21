@@ -1,7 +1,7 @@
 from abc import ABCMeta
 from typing import Any, Dict, Generator, List, Optional, Tuple
 
-from .errors import NamingConventionError, OxitraitError
+from .errors import NamingConventionError, OxiTraitError
 from .trait import Trait
 
 
@@ -102,7 +102,7 @@ class Impl(Trait):
 
         if base_abstractmethods:
             abstractmethods = ", ".join(f"{m}()" for m in base_abstractmethods)
-            raise OxitraitError(
+            raise OxiTraitError(
                 f"Impl {name} must implement required methods: {abstractmethods}"
             )
 
